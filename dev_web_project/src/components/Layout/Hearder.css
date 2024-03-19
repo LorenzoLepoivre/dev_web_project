@@ -1,0 +1,13 @@
+#header {
+    position: fixed; /* Fixer l'élément en haut de la fenêtre */
+    top: 0; /* Positionner l'élément au bord supérieur de la fenêtre */
+    left:0;
+    width: 100%;
+}
+
+#header nav{
+    display: flex;
+    justify-content: row;
+    justify-content: space-between;
+}
+

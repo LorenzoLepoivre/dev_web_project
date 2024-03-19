@@ -1,0 +1,14 @@
+#HeaderCartButton{
+    margin-right: 1em;
+}
+
+#HeaderCartButton h1{
+    font-size: 1rem;
+}
+
+#InButton
+{
+    display: flex;
+    justify-content: row;
+    align-items: center;
+}
