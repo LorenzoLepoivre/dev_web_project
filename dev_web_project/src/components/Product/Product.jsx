@@ -1,13 +1,15 @@
 import ProductItem from './ProductItem.jsx';
 import './Product.css'
 
-function Product() {
+function Product(props) {
+  const { productTab, dispatchCart } = props;
   return (
-    <div id="vignette-container" >
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
+    <div id="vignette-container">
+      {productTab.map((element) => ( 
+        <figure>
+          <ProductItem product={element} dispatchCart={dispatchCart}/>
+        </figure>
+      ))}
     </div>
   );
 }
