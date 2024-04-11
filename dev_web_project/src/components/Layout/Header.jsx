@@ -5,7 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import HeaderCartButton from './HeaderCartButton'
 import './Hearder.css'
 
-function Header({ onShowCart}) {
+function Header({ onShowCart, nbre_product}) {
     return (
       <header id="header">
         <Navbar expand="lg" className="bg-body-tertiary">
@@ -31,7 +31,7 @@ function Header({ onShowCart}) {
             </Navbar.Collapse>
           </Container>
 
-          <HeaderCartButton onShowCart={onShowCart}/>
+          <HeaderCartButton onShowCart={onShowCart} nbre_product={nbre_product}/>
 
         </Navbar>
         </header>

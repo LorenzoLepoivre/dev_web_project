@@ -14,17 +14,34 @@ function App() {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [product_tab, setProduct_tab] = useState([]);
+  const [nbre_product, setNbre_product] = useState(0);
   
   const cartReducer = (state, action) => {
     if (action.type === 'SET') {
       return action.cart;
+
     } else if (action.type === 'ADD') {
-      let ligne = [action.id, action.name, action.price, action.quantity];
-      return state.concat([ligne]);
+      let existingProductIndex = state.findIndex(item => item[0] === action.id);
+      if (existingProductIndex !== -1) {
+        console.log(action.quantity);
+        state[existingProductIndex][2] += action.price;
+        state[existingProductIndex][3] += action.quantity;
+      }
+      else{
+        let ligne = [action.id, action.name, action.price, action.quantity];
+        state = state.concat([ligne]);
+      } 
+      setNbre_product(state.reduce((acc,currentValue)=>acc+currentValue[3],0));
+      return state  
       
     } else if (action.type === 'READ') {
-      console.log(state);
       return state;
+
+    }else if (action.type === 'DEL') {
+      state = state.filter(s => s[0] != action.id);
+      setNbre_product(state.reduce((acc,currentValue)=>acc+currentValue[3],0));
+      return state;
+
     } else {
       console.error('Invalid action type');
       return state;
@@ -71,10 +88,10 @@ function App() {
       {error && <ErrorMessage />}
       {!error && (
         <div>
-          <Header onShowCart={showCartHandler}/>
+          <Header onShowCart={showCartHandler}  nbre_product={nbre_product}/>
           <main>
             <Product productTab={product_tab} dispatchCart={dispatchCart}/>
-            <Cart isOpen={cartIsOpen} onCloseCart={hideCartHandler} cart={cart}/>
+            <Cart isOpen={cartIsOpen} onCloseCart={hideCartHandler} cart={cart} dispatchCart={dispatchCart}/>
           </main>
         </div>
       )}
