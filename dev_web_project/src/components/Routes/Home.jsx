@@ -87,7 +87,7 @@ function App() {
       {loading && <Spinner />}
       {error && <ErrorMessage />}
       {!error && (
-        <div>
+        <div id="content">
           <Header onShowCart={showCartHandler}  nbre_product={nbre_product}/>
           <main>
             <Product productTab={product_tab} dispatchCart={dispatchCart}/>

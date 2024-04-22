@@ -7,9 +7,9 @@ function ProductItem(props) {
     const {product, dispatchCart} = props;
     return (
         <div class="product_item">
-            <Card>
+            <Card style={{ width: '25rem' }}>
                 <Link to={`/detail/${product.id}`}>
-                <Card.Img variant="top" src= {product.images[0]} />
+                <Card.Img variant="top" src= {product.mainImage} />
                 </Link>
                 <div class="titre_carte">
                 <Card.Body>
@@ -19,7 +19,7 @@ function ProductItem(props) {
                 <ProductItemForm product={product} dispatchCart={dispatchCart}/> 
             </Card>
         </div>
-    );
+    );  
 }
 
 export default ProductItem
