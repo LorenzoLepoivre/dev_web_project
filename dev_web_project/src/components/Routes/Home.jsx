@@ -9,7 +9,7 @@ import axios from 'axios';
 import Spinner from '../Axios/Spinner.jsx';
 import ErrorMessage from '../Axios/ErrorMessage.jsx';
 
-function App() {
+function Home() {
   const [cartIsOpen, setCartIsOpen] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -99,4 +99,4 @@ function App() {
   );
 }
 
-export default App
+export default Home
