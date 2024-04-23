@@ -86,7 +86,7 @@ function Home() {
         <div>
             {loading && <Spinner />}
             {error && <ErrorMessage />}
-            {!error && (
+            {!error && !loading && (
                 <div id="content">
                     <Header onShowCart={showCartHandler} nbre_product={nbre_product} />
                     <main>

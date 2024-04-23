@@ -1,9 +1,10 @@
 import React from 'react';
+import './Spinner.css'
 
 function Spinner() {
   return (
     <div className="spinner-container">
-      <div className="spinner"><p>FFF</p></div>
+      <div className="spinner"></div>
     </div>
   );
 }
