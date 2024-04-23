@@ -40,9 +40,9 @@ function Detail() {
         {!error && (
         <div>
             <HeaderDetail/>
-            <img src={product.mainImage} alt="Image du jeux : {product.name}"  class="img-thumbnail imgDetail"></img>
-            <table class="table table-bordered">
-            <thead class="thead-light">
+            <img src={product.mainImage} alt="Image du jeux : {product.name}"  className="img-thumbnail imgDetail"></img>
+            <table className="table table-bordered">
+            <thead className="thead-light">
                 <tr>
                 <th scope="col">Nom</th>
                 <th scope="col">Description</th>

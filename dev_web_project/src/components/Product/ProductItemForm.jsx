@@ -25,15 +25,22 @@ function ProductItemForm(props) {
   };
 
   return (
-    <div id="form_input">
-        <p>{product.price} €</p>
-        <div id="entree">
-        <label for="quantity">Amount:</label>
-        <input type="text" id="quantity" name="quantity" value={quantity} onChange={handleChangeQuantity}  />   
+    <div className="form_input">
+      <p>{product.price} €</p>
+      <div className="entree">
+        <label htmlFor={`quantity_${product.id}`}>Amount:</label>
+        <input 
+          type="text" 
+          id={`quantity_${product.id}`} 
+          name={`quantity_${product.id}`} 
+          value={quantity} 
+          onChange={handleChangeQuantity}  
+        />   
         <Button variant="primary" onClick={cartReducerUse}>Add</Button>
-        </div>
+      </div>
     </div>
   );
+  
 }
 
 export default ProductItemForm
