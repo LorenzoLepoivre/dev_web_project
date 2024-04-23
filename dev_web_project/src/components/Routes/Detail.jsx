@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import HeaderDetail from '../Layout/HeaderDetail'
 import axios from 'axios';
 import Spinner from '../Axios/Spinner.jsx';
-import ErrorMessage from '../Axios/ErrorMessage.jsx';
+import ProductNotFound from '../Axios/ProductNotFound.jsx';
 import { useState, useEffect  } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
@@ -36,7 +36,7 @@ function Detail() {
     return( 
     <div>
         {loading && <Spinner />}
-        {error && <ErrorMessage />}
+        {error && <ProductNotFound />}
         {!error && (
         <div>
             <HeaderDetail/>

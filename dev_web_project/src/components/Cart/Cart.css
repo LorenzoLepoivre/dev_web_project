@@ -1,3 +1,7 @@
 td svg {
     width: 50%;
   }
+
+#total{
+  font-weight: bold;
+}

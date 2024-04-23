@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import './Cart.css'
+import Table from 'react-bootstrap/Table';
 
 function Cart({ isOpen, onCloseCart, cart, dispatchCart }) {
   var total = 0;
@@ -20,7 +21,7 @@ function Cart({ isOpen, onCloseCart, cart, dispatchCart }) {
           <Modal.Title>Cart</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <table>
+          <Table striped bordered hover responsive>
           <thead>
             <tr>
               <th scope="col">Ref</th>
@@ -43,8 +44,9 @@ function Cart({ isOpen, onCloseCart, cart, dispatchCart }) {
             </tr>
           ))}
           </tbody>
-        </table>
-        <p>Total Amount {total}€</p>
+          </Table>
+
+        <p id="total">Total Amount {total}€</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={onCloseCart}>

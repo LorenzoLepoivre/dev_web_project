@@ -51,11 +51,6 @@
     justify-content: flex-start;
     padding: 3rem 0 0 0;
   }
-  
-  .produit {
-    flex: 0 0 calc(25% - 20px); 
-    margin: 10px;
-  }
 
   main img{
     min-height: 30rem;

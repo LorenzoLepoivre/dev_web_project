@@ -4,7 +4,7 @@ import './Product.css'
 function Product(props) {
   const { productTab, dispatchCart } = props;
   return (
-    <div id="vignette-container">
+    <div class="vignette-container">
       {productTab.map((element) => ( 
         <figure>
           <ProductItem product={element} dispatchCart={dispatchCart}/>
