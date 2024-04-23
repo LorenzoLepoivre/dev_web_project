@@ -7,6 +7,7 @@ import ProductNotFound from '../Axios/ProductNotFound.jsx';
 import { useState, useEffect  } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
+import Table from 'react-bootstrap/Table';
 
 function Detail() {
     const { id } = useParams();
@@ -41,8 +42,8 @@ function Detail() {
         <div>
             <HeaderDetail/>
             <img src={product.mainImage} alt="Image du jeux : {product.name}"  className="img-thumbnail imgDetail"></img>
-            <table className="table table-bordered">
-            <thead className="thead-light">
+            <Table striped bordered hover responsive>
+            <thead>
                 <tr>
                 <th scope="col">Nom</th>
                 <th scope="col">Description</th>
@@ -61,7 +62,7 @@ function Detail() {
                 </td>
                 </tr>
             </tbody>
-            </table>
+            </Table>
         </div>
         )}
     </div>);

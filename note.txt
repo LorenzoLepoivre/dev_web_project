@@ -1,4 +1,3 @@
-REVOIR LE SPINNER 
 http://localhost:3000/api-docs/
 	
 	  
