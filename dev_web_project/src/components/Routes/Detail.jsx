@@ -53,11 +53,8 @@ function Detail() {
                 <tr>
                 <td>{product.name}</td>
                 <td>
-                {product.description && product.description.split('\n').map((item, index) => (
-                    <React.Fragment key={index}>
-                    {item}
-                    <br />
-                    </React.Fragment>
+                {product.description && product.description.split('\n').map((item) => (
+                  <p>{item}</p>
                 ))}
                 </td>
                 </tr>
